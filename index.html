@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend + Backend Test</title>
+</head>
+<body>
+    <h1>Docker Practice App</h1>
+    <button onclick="getMessage()">Get Message From Backend</button>
+    <p id="output"></p>
+
+    <script>
+        async function getMessage() {
+            const response = await fetch("http://localhost:5000/api/message");
+            const data = await response.json();
+            document.getElementById("output").innerText = data.message;
+        }
+    </script>
+</body>
+</html>
